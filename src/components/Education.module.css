@@ -1,0 +1,32 @@
+.section { background: var(--white); }
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  padding: 3rem 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--white);
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card:hover { box-shadow: 6px 6px 0 rgba(13,13,13,0.06); transform: translateY(-3px); }
+.iconWrap {
+  width: 80px; height: 80px;
+  border-radius: 2px;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.degree { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
+.school {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; color: var(--accent);
+  margin-bottom: 0.3rem; letter-spacing: 0.06em;
+}
+.location { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
+@media (max-width: 768px) {
+  .card { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+  .iconWrap { margin: 0 auto; }
+}

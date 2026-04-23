@@ -1,0 +1,257 @@
+.hero {
+  min-height: auto;
+  display: flex; align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  background: var(--bg);
+}
+
+/* Top bar */
+.topBar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.topLabel { display: flex; align-items: center; gap: 0.6rem; }
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: blink 2s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.topRight { color: var(--muted); }
+
+/* Headline */
+.supText {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.roleTag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--white);
+  background: var(--ink);
+  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.yearTag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* Profile photo + name row */
+.namePhotoRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+.introCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.photoContainer {
+  width: 320px;
+  height: 400px;
+  flex-shrink: 0;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Full name bar */
+.fullName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  display: flex; flex-direction: column;
+  line-height: 1.2;
+  gap: 0.25rem;
+}
+.greeting {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--muted);
+  font-weight: 400;
+}
+.hiLine {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--ink);
+  font-weight: 700;
+}
+.nameHighlight {
+  color: #2563eb;
+}
+
+/* Bottom split */
+.bottomSplit {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 440px;
+}
+.btns { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+
+/* Achievement pills */
+.achRow { display: flex; flex-direction: column; gap: 0.5rem; }
+.achPill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.achText { color: var(--ink); font-weight: 500; }
+
+/* Card */
+.cardCol { display: flex; justify-content: flex-end; }
+.card {
+  width: 280px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; align-items: center;
+  box-shadow: 8px 8px 0 rgba(13,13,13,0.06);
+  animation: floatCard 6s ease-in-out infinite;
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+@keyframes floatCard {
+  0%,100% { transform: translateY(0) rotate(-0.5deg); }
+  50%      { transform: translateY(-14px) rotate(0.5deg); }
+}
+
+/* Avatar ripple */
+.avatarWrap {
+  position: relative;
+  width: 100px; height: 100px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.ripple {
+  position: absolute;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(13,13,13,0.15);
+  animation: rippleOut 2.4s ease-out infinite;
+}
+.ripple:nth-child(2) { animation-delay: 0.8s; border-color: rgba(232,66,10,0.2); }
+.ripple:nth-child(3) { animation-delay: 1.6s; border-color: rgba(13,13,13,0.06); }
+@keyframes rippleOut {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.0); opacity: 0; }
+}
+.avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  position: relative; z-index: 1;
+}
+.cardName {
+  font-family: var(--font-heading);
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+.cardRole {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cardDivider {
+  width: 100%; height: 1px;
+  background: var(--border);
+  margin: 1.25rem 0;
+}
+.statsRow {
+  display: flex; gap: 1.5rem;
+  width: 100%;
+}
+.statBlock { text-align: center; flex: 1; }
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--ink);
+  display: block; line-height: 1;
+}
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.companyTag {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.companyDot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: blink 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .namePhotoRow { grid-template-columns: 1fr; gap: 2rem; }
+  .photoContainer { width: 220px; height: 280px; justify-self: center; }
+  .bottomSplit { grid-template-columns: 1fr; gap: 2rem; }
+  .cardCol { justify-content: center; }
+}

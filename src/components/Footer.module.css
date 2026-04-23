@@ -1,0 +1,22 @@
+.footer {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.left {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.left span { color: var(--accent); }
+.right {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.08em;
+}
+@media (max-width: 600px) { .footer { justify-content: center; text-align: center; } }

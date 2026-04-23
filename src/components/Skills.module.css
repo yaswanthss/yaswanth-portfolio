@@ -1,0 +1,13 @@
+.section { background: var(--white); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 4rem; }
+.item { margin-bottom: 0.75rem; }
+.header { display: flex; justify-content: space-between; margin-bottom: 0.6rem; }
+.name { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink); letter-spacing: 0.04em; }
+.pct { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 500; }
+.barBg { height: 3px; background: rgba(13,13,13,0.08); border-radius: 0; overflow: hidden; }
+.bar {
+  height: 100%; width: 0;
+  transition: width 1.3s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+}
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
